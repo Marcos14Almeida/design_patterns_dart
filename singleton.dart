@@ -1,6 +1,13 @@
 //https://medium.com/flutter-community/flutter-design-patterns-1-singleton-437f04e923ce
 //https://stackoverflow.com/questions/12649573/how-do-you-build-a-singleton-in-dart
 
+//////////////
+//SINGLETON
+//////////////
+//Crie uma única instância de um objeto. 
+//Uma única mudança no código é refletido em todas as suas instâncias.
+
+
 void main() {
 
 var s1 = Singleton(); 
