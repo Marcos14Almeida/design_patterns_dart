@@ -3,8 +3,9 @@
 ///////////////////////
 // ABSTRACT FACTORY
 ///////////////////////
+//"Fábrica de fábricas"
 abstract class Fabrica{
-	createChair(); 
+  createChair(); 
   createSofa(); 
   createTable();
 }
