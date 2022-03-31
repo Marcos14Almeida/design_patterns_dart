@@ -22,8 +22,13 @@ class CaminhaoAntes implements TransportAntes{
 //Criar classe que retorna o objeto desejado
 //Dentro do objeto existe a implementação do resultado esperado "deliver()"
 //A fábrica "Logistics" retorna o produto: "createTransport()"
+//Ao contrario do Abstract Factory, nesse design pattern a classe Logistics não é uma interface, mas uma classe abstrata
+//Por isso ela pode ter métodos próprios escritos nela, nesse caso em: "Logistics" 
 abstract class Logistics{
   createTransport();
+  void precoGasolina(){
+    print('Ta caro');
+  }
 }
 
 class RoadDelivery extends Logistics{
@@ -64,6 +69,7 @@ class Barco implements Transport{
 void main(){
 
   Transport transporte = RoadDelivery().createTransport(); //Cria caminhao
+  RoadDelivery().precoGasolina();
   transporte.deliver(); //Entrega caixa
   transporte = SeaDelivery().createTransport(); //Cria navio
   transporte.deliver(); //Entrega container
