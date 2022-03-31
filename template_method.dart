@@ -1,3 +1,6 @@
+//https://blog.flutterando.com.br/padr%C3%B5es-de-projetos-em-dart-template-methods-be6b23ceb6b4
+
+//ANTES? REPETIÇÃO DESNECESSARIA DE CÓDIGO
 abstract class Imposto {
   double Calcula(Venda venda);
 }
@@ -11,17 +14,22 @@ class IQ implements Imposto {
     return venda.valorTotal * 0.3;
   }
 }
-
 class IK implements Imposto {
-  double Calcula(Venda venda) {
-    if (venda.itens.length > 3) {
-      return venda.valorTotal * 0.1;
+  double Calcula(venda) {
+    if (venda.valorTotal < 70) {
+      return venda.valorTotal * 0.5;
     }
-    return venda.valorTotal * 0.05;
+
+    return venda.valorTotal * 0.1;
   }
 }
+/////////////////////////////////////
+//DEPOIS:
+abstract class Imposto {
+  double Calcula(Venda venda);
+}
 
-abstract class ImpostoCondicional implements Imposto {
+abstract class ImpostoCondicional extends Imposto {
   double Calcula(Venda venda) {
     if (UsarValorMaximo(venda)) {
       return CalculaValorMaximo(venda);
