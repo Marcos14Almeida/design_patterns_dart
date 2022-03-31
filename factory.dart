@@ -28,14 +28,14 @@ abstract class Logistics{
 
 class RoadDelivery extends Logistics{
   @override
- createTransport(){
+ Caminhao createTransport(){
    return Caminhao();
  }
 }
 
 class SeaDelivery extends Logistics{
   @override
- createTransport(){
+ Barco createTransport(){
    return Barco();
  }
 }
@@ -46,14 +46,14 @@ abstract class Transport{
 
 class Caminhao implements Transport{
   @override
-  deliver(){    
+  void deliver(){    
     print('Entrega Caixa');
   }    
 }
 
 class Barco implements Transport{
   @override
-  deliver(){
+  void deliver(){
     print('Entrega Container');
   }    
 }
@@ -63,9 +63,9 @@ class Barco implements Transport{
 ////////////////////////////////
 void main(){
 
-  dynamic transporte = RoadDelivery().createTransport(); //Cria caminhao
-  print(transporte.deliver()); //Entrega caixa
+  Transport transporte = RoadDelivery().createTransport(); //Cria caminhao
+  transporte.deliver(); //Entrega caixa
   transporte = SeaDelivery().createTransport(); //Cria navio
-  print(transporte.deliver()); //Entrega container
+  transporte.deliver(); //Entrega container
   
 }
