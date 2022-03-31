@@ -21,6 +21,7 @@ class CaminhaoAntes implements TransportAntes{
 ///////////////////////////////
 //Criar classe que retorna o objeto desejado
 //Dentro do objeto existe a implementação do resultado esperado "deliver()"
+//A fábrica "Logistics" retorna o produto: "createTransport()"
 abstract class Logistics{
   createTransport();
 }
@@ -62,9 +63,9 @@ class Barco implements Transport{
 ////////////////////////////////
 void main(){
 
-  dynamic transporte = RoadDelivery().createTransport(); 
+  dynamic transporte = RoadDelivery().createTransport(); //Cria caminhao
   print(transporte.deliver()); //Entrega caixa
-  transporte = SeaDelivery().createTransport();
+  transporte = SeaDelivery().createTransport(); //Cria navio
   print(transporte.deliver()); //Entrega container
   
 }
