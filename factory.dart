@@ -24,6 +24,7 @@ class CaminhaoAntes implements TransportAntes{
 //A fábrica "Logistics" retorna o produto: "createTransport()"
 //Ao contrario do Abstract Factory, nesse design pattern a classe Logistics não é uma interface, mas uma classe abstrata
 //Por isso ela pode ter métodos próprios escritos nela, nesse caso em: "Logistics" 
+//Usa extends (Fabric) usa implements (Abstract Factory)
 abstract class Logistics{
   createTransport();
   void planDelivery(){
