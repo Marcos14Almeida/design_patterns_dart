@@ -26,8 +26,8 @@ class CaminhaoAntes implements TransportAntes{
 //Por isso ela pode ter métodos próprios escritos nela, nesse caso em: "Logistics" 
 abstract class Logistics{
   createTransport();
-  void precoGasolina(){
-    print('Ta caro');
+  void planDelivery(){
+    print('dia 10');
   }
 }
 
@@ -69,7 +69,7 @@ class Barco implements Transport{
 void main(){
 
   Transport transporte = RoadDelivery().createTransport(); //Cria caminhao
-  RoadDelivery().precoGasolina();
+  RoadDelivery().planDelivery();
   transporte.deliver(); //Entrega caixa
   transporte = SeaDelivery().createTransport(); //Cria navio
   transporte.deliver(); //Entrega container
