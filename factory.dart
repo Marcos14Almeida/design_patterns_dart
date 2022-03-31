@@ -19,6 +19,8 @@ class CaminhaoAntes implements TransportAntes{
 ///////////////////////////////
 //          SOLUÇÃO
 ///////////////////////////////
+//Criar classe que retorna o objeto desejado
+//Dentro do objeto existe a implementação do resultado esperado "deliver()"
 abstract class Logistics{
   createTransport();
 }
