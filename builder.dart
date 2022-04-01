@@ -19,9 +19,9 @@ class Pizza {
   final bool hasExtraCheese;
   
   Pizza._builder(PizzaBuilder builder) : 
-    sauce = builder.sauce!,
-    toppings = builder.toppings!,
-    hasExtraCheese = builder.hasExtraCheese!;
+    sauce = builder.sauce ?? '',
+    toppings = builder.toppings ?? [],
+    hasExtraCheese = builder.hasExtraCheese ?? false;
 }
 
 class PizzaBuilder {
@@ -34,11 +34,7 @@ class PizzaBuilder {
   List<String>? toppings;
   bool? hasExtraCheese;
 
-  void setToppings(List<String> toppings) {
-    if (!toppings.contains(neededTopping)) {
-      throw 'Really, without $neededTopping? :(';
-    }
-    
+  void setToppings(List<String> toppings) {    
     this.toppings = toppings;
   }
   
